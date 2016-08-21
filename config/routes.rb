@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resource :entries
+  resources :entries
 
   root 'entries#index'
 end
