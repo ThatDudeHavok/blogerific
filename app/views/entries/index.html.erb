@@ -1,1 +1,12 @@
-<h1>Oh hey dar!!</h1>
+<h1>All The Entries: </h1>
+
+<article class="articles">
+  <% @entries.each do |entry| %>
+    <section>
+      <h4><%= entry.title %></h4>
+      <p>
+        <%= entry.body %>
+      </p>
+    </section>
+  <% end %>
+</article>
