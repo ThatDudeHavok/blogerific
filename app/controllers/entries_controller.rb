@@ -4,6 +4,7 @@ class EntriesController < ApplicationController
   end
 
   def new
+    @entry = Entry.new
   end
 
   def show
@@ -13,8 +14,11 @@ class EntriesController < ApplicationController
   def create
     @entry = Entry.new(entry_params)
 
-    @entry.save
-    redirect_to entry_path(@entry)
+    if @entry.save
+      redirect_to entry_path(@entry)
+    else
+      render 'new'
+    end
   end
 
   private
