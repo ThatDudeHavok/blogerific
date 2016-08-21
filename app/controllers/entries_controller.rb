@@ -7,6 +7,10 @@ class EntriesController < ApplicationController
     @entry = Entry.new
   end
 
+  def edit
+    @entry = Entry.find(params[:id])
+  end
+
   def show
     @entry = Entry.find(params[:id])
   end
@@ -18,6 +22,16 @@ class EntriesController < ApplicationController
       redirect_to entry_path(@entry)
     else
       render 'new'
+    end
+  end
+
+  def update
+    @entry = Entry.find(params[:id])
+
+    if @entry.update(entry_params)
+      redirect_to @entry
+    else
+      render 'edit'
     end
   end
 
