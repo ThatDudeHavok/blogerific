@@ -1,0 +1,32 @@
+<p>
+  <strong>Title:</strong>
+  <%= @entry.title %>
+</p>
+
+<p>
+  <strong>body:</strong>
+  <%= @entry.body %>
+</p>
+
+<h2>Comments</h2>
+
+<%= render @entry.comments %>
+
+<h2>Add a comment:</h2>
+<%= form_for([@entry, @entry.comments.build]) do |f| %>
+  <p>
+    <%= f.label :commentor %>
+    <%= f.text_field :commentor %>
+  </p>
+  <p>
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+<ul class="links">
+  <li><%= link_to 'edit', edit_entry_path(@entry) %></li>
+  <li><%= link_to 'back', entries_path %></li>
+</ul>

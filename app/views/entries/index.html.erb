@@ -1,0 +1,19 @@
+<h1>All The Entries: </h1>
+
+<article class="articles">
+  <% @entries.each do |entry| %>
+    <section>
+      <h4><%= entry.title %></h4>
+      <p>
+        <%= entry.body %>
+      </p>
+      <div class="links">
+        <ul>
+          <li><%= link_to 'show', entry_path(entry) %></li>
+          <li><%= link_to 'edit', edit_entry_path(entry) %></li>
+          <li><%= link_to 'destroy', entry_path(entry), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+        </ul>
+      </div>
+    </section>
+  <% end %>
+</article>
