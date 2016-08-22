@@ -7,6 +7,12 @@
       <p>
         <%= entry.body %>
       </p>
+      <div class="links">
+        <ul>
+          <li><%= link_to 'show', entry_path(entry) %></li>
+          <li><%= link_to 'edit', edit_entry_path(entry) %></li>
+        </ul>
+      </div>
     </section>
   <% end %>
 </article>
