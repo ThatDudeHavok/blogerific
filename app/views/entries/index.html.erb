@@ -11,6 +11,7 @@
         <ul>
           <li><%= link_to 'show', entry_path(entry) %></li>
           <li><%= link_to 'edit', edit_entry_path(entry) %></li>
+          <li><%= link_to 'destroy', entry_path(entry), method: :delete, data: { confirm: 'Are you sure?' } %></li>
         </ul>
       </div>
     </section>
