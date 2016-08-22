@@ -2,29 +2,6 @@
 
 <%= form_for :entry, url: entries_path do |f| %>
 
-  <% if @entry.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@entry.errors.count, "error") %> prohibited this entry from being saved:
-      </h2>
-      <ul>
-        <% @entry.errors.full_messages.each do |err| %>
-          <li><%= err %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <p>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :body %>
-    <%= f.text_area :body %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<%= render 'form' %>
 
 <%= link_to 'back', entries_path %>
